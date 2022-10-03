@@ -1,7 +1,7 @@
 /*
 file: areaTriangolo.c
 autore: Leonardo Savino
-classe: 3°H                                
+classe: 3Â°H                                
 data: 28/09/2022
 calcolo media di tre numeri
 Input: num1, num2, num3
@@ -30,4 +30,5 @@ int main()
   media = (num1 + num2 + num3)/3.0;  //calcolo la media
   
   printf("media = %.2f", media);  //stampa a schermo risultato
+  return 0;
 }
