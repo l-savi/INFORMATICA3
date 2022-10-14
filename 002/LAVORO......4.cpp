@@ -1,7 +1,7 @@
 /*
 file: secondi.c
 autore: Leonardo Savino
-classe: 3°H
+classe: 3Â°H
 data: 05/10/2022
 Leggi in input un numero di secondi e trasformali in ora, minuti e secondi 
 Input: secondi
