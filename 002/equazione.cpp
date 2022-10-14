@@ -1,7 +1,7 @@
 /*
 file: equazione3Grado.c
 autore: Leonardo Savino
-classe: 3°H
+classe: 3Â°H
 data: 05/10/2022
 calcola il risultato di -ax^3 + bx^2 - cx + d leggendo dall'utente i valori di a, b, c, d e x
 Input: a, b, c, d, x
