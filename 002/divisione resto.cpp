@@ -1,7 +1,7 @@
 /*
 file: restoDivisione.c
 autore: Leonardo Savino
-classe: 3°H
+classe: 3Â°H
 data: 05/10/2022
 Restituisci il resto della divisione tra due interi 
 Input: n1, n2
