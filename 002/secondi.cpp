@@ -11,7 +11,8 @@ Output: ore, minuti e secondi
 
 #include <stdio.h>
 
-int main() {
+int main() 
+{
   int secondiIniziali;  //input
   int ore, minuti, secondi;  //output
   
