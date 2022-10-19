@@ -12,7 +12,8 @@ Output: risultato equazione
 #include <stdio.h>
 #include <math.h>
 
-int main() {
+int main() 
+{
   float a, b, c, d, x;  //input
   float risultato;      //output
   
