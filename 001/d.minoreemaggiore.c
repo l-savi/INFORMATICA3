@@ -1,5 +1,5 @@
 /*/** ****************************************************************************************
-* \mainpage d.minoreemaggiore.c
+* \mainpage d_minoreemaggiore.c
 *
 * @brief Scrivere un programma che, richiesti in ingresso due valori interi distinti, ne stampi a schermo il minore.
 * 
