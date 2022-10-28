@@ -15,7 +15,7 @@ int main()
 {
   int num1, num2; //input
   
-  printf ("inserisci due numeri interi distinti");
+  printf ("inserisci due numeri interi distinti"); //richiesta dati all'utente
   scanf ("%d %d", &num1, &num2);
   
   if (num1<num2)
