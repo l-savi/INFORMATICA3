@@ -11,7 +11,8 @@
 
 #include <stdio.h>
 
-int main() {
+int main()
+{
 	
   int a,b,c;	//input
   int max, min;	//output
