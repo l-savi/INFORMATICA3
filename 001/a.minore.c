@@ -25,9 +25,9 @@ int main()
   
    else 
   {
-  	printf ("%d è minore", num2);
+  	printf ("%d Ã¨ minore", num2);
   }
   
   
   return 0;
-  }
+}
