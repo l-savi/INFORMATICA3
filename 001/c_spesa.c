@@ -1,8 +1,8 @@
 /*/** ****************************************************************************************
 * \mainpage c_spesa.c
 *
-* @brief Un negoziante per ogni spesa di importo superiore a 50 € effettua uno sconto del 5%, 
-* del 10% per ogni spesa superiore a 100 €. Scrivere un programma che richieda all'utente 
+* @brief Un negoziante per ogni spesa di importo superiore a 50 â‚¬ effettua uno sconto del 5%, 
+* del 10% per ogni spesa superiore a 100 â‚¬. Scrivere un programma che richieda all'utente 
 * l'ammontare della spesa e visualizzi quindi l'importo effettivo da pagare. 
 *
 * 
@@ -18,22 +18,19 @@ float main()
 {
 	float num1;  //input
 	
-	//lettura variabili
-	printf("inserisci prezzo: ");
+	                          
+	printf("inserisci prezzo: ");  //lettura variabili
 	scanf("%f", &num1);
 	
 	if(num1>100)
 	{
-		//Se laspesa superiore a 100 €
-		//Facciamo sconto del 10%
-		num1=(num1/100)*90;
+		
+		num1=(num1/100)*90; //spesa superiore a 100 â‚¬ sconto del 10%
 		printf("il prezzo e' %f", num1);
 	}
 	else if(num1>50)
 	{
-		//Se laspesa superiore a 50 €
-		//Facciamo uno sconto del 5%
-		num1=(num1/100)*95;
+		num1=(num1/100)*95; //spesa superiore a 50 â‚¬ sconto del 5%
 		printf("il prezzo e' %f", num1);
 	}
 	else
