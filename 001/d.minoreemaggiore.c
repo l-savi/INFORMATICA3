@@ -48,5 +48,5 @@ int main()
   
   	
 	printf("%d, %d", min, max);
-	return 0
+	return 0;
 }
