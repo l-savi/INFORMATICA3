@@ -1,8 +1,8 @@
 /*/** ****************************************************************************************
 * \mainpage a_minore.c
 *
-* @brief Scrivere un programma che, richiesti in ingresso due valori interi distinti, ne stampi a schermo il minore.
-* 
+* @brief Scrivere un programma che, richiesti in ingresso due valori interi distinti, 
+* ne stampi a schermo il minore. 
 * 
 * @author Leonardo Savino
 * @date 26/10/2022
