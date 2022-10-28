@@ -2,7 +2,7 @@
 * \mainpage e.triangoli.c
 *
 * @brief Scrivere un programma che, lette le misure dei lati di un triangolo, visualizzi se il 
-* triangolo è equilatero, isoscele o scaleno [ref]
+* triangolo Ã¨ equilatero, isoscele o scaleno [ref]
 * 
 * 
 * @author Leonardo Savino
@@ -30,6 +30,6 @@ int main()
         	else 
 	        	printf("E' un triangolo scaleno");
 
-   return 0;
+     return 0;
    }
  	
