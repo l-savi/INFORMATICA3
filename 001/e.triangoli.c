@@ -1,5 +1,5 @@
 /*/** ****************************************************************************************
-* \mainpage e.triangoli.c
+* \mainpage e_triangoli.c
 *
 * @brief Scrivere un programma che, lette le misure dei lati di un triangolo, visualizzi se il 
 * triangolo è equilatero, isoscele o scaleno [ref]
