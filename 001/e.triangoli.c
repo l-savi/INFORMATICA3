@@ -25,10 +25,10 @@ int main()
 		    	printf("E' un triangolo equilatero");
 		    	
 		     else
-			     printf("E' un triangolo isoscele");
+			     printf("E' un triangolo scaleno");
 			     
         	else 
-	        	printf("E' un triangolo scaleno");
+	        	printf("E' un triangolo isoscele");
 
      return 0;
    }
