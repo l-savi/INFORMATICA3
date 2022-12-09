@@ -18,7 +18,7 @@ int main()
 	int n, c=0, somma=0;      
     float media=0;             
     do 
-    {                                           //ciclo richiesta input e somma numeri inseriti
+    {                                           //richiesta input e somma numeri inseriti
         printf("Insersici un numero:");
         scanf("%d", &n);
 
