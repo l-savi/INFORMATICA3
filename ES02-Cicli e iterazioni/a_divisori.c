@@ -12,7 +12,7 @@ int main()
 {
 	int n, c;          // dichiaro le variabili
 	
-	printf ( " \n --Esercizio B Leonardo Savino-- \n\n " );
+	printf ( " \n --Esercizio A Leonardo Savino-- \n\n " );
 	
 	printf ( "Inserisci un numero:" );	// richiesta input 
 	scanf ( "%d" , &n);
