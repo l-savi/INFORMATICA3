@@ -21,17 +21,17 @@ int main()
     printf("\n--Esercizio F Leonardo Savino--\n\n");
 
     
-    int bit, n=0, i=7;
+    int bit, n=0, c=7;
 
     printf("inserisci 8 bit\n");    //richiedo l'inserimento di 8 bit
 
     do{
         scanf("%d", &bit);          //leggo un bit alla volta
 
-        n += pow(2, i) * bit;    //converto singolo bit in decimale
+        n += pow(2, c) * bit;    //converto singolo bit in decimale
 
-        i--;                        //decremento la potenza del 2 di 1
-    } while (i>-1);                 //continuo il ciclo fino a quando la potenza non raggiunge lo 0
+        c--;                        //decremento la potenza del 2 di 1
+    } while (c>-1);                 //continuo il ciclo fino a quando la potenza non raggiunge lo 0
 
     printf("\nConversione in binario = %d\n", n);            // risultato
 }
