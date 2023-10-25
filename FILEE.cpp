@@ -74,5 +74,32 @@ void copianome(char in[], char out[])
 
 
 void conta(char in[], char fout[]){
+		FILE * puntfile = fopen (in, "r");
+	char c;
 	
+	while (!foef(puntfile))
+	{
+		c=getc(puntfile);
+		
+		if (c!= ' ' && c!= '\n')
+		{
+			contal++;
+		}
+		else
+		{
+				if (c==' ')
+				{
+					contap++;
+				}
+			else 
+			{
+				if (c=='\n')
+				{
+					contar++;
+					contap++;
+				}
+			}
+		}
+	} 
+fclose(puntfile);
 }
