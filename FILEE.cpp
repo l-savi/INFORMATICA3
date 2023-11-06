@@ -202,134 +202,43 @@ void contaparidispari(char fin[], char fout1[], char fout2[])
     }
 }
 
-void cesareCrypt(char fin[],char fout[])
+void CesareCrypt(char cesare[], char cesareCrypt[], int k)
 {
-    char c;
-    FILE * err1;
-    FILE * err2;
-
-    err1=fopen(fin,"r");
-    err2=fopen(fout,"w");
-
-    if(err1 != 0)
-    {
-        printf("il file e' stato aperto correttamente\n");
-
-        while((c=fgetc(err1))!=EOF)
-        {
-            if(c>='A' && c<='W')
-            {
-                c+=3;
-                fputc(c,err2);
-            }
-            else
-            {
-                if(c>='X' && c<='Z')
-                {
-                     c-=25;
-                     fputc(c,err2);
-                }
-                else 
-                {
-                    if(c==' ')
-                    {
-                        fputc(' ',err2);
-                    }
-                }
-            }
-
-            if(c>='a' && c<='w')
-            {
-                c+=3;
-                fputc(c,err2);
-            }
-            else
-            {
-                if(c>='x' && c<='z')
-                {
-                     c-=25;
-                     fputc(c,err2);
-                }
-                else 
-                {
-                    if(c==' ')
-                    {
-                        fputc(' ',err2);
-                    }
-                }
-            }
-        }
-        fclose(err1);
-        fclose(err2);
-    }
-    else
-    {
-        printf("file non aperto\n");
-    }
+	FILE * puntcesare = fopen(cesare,"r");//apertura file in lettura
+	FILE * puntcesareCrypt = fopen(cesareCrypt,"w");//apertura file in scrittura
+	
+	char c;
+	
+	while(!feof(puntcesare))
+	{
+		c=getc(puntcesare);
+		if(c != '\n');
+		c=c+k;
+		
+		putc(c,puntcesareCrypt);
+	}
+	
+	fclose(puntcesare);
+	fclose(puntcesareCrypt);
 }
 
-void cesareDecrypt(char fin[],char fout[])
+
+void DecryptCesare(char cesareCrypt[],char cesareDecrypt[], int k)
 {
-    char c;
-    FILE * err1;
-    FILE * err2;
-
-    err1=fopen(fin,"r");
-    err2=fopen(fout,"w");
-
-    if(err1 != 0)
-    {
-        printf("il file e' stato aperto correttamente\n");
-
-        while((c=fgetc(err1))!=EOF)
-        {
-            if(c>='D' && c<='Z')
-            {
-                c-=3;
-                fputc(c,err2);
-            }
-            else
-            {
-                if(c>='A' && c<='C')
-                {
-                     c+=25;
-                     fputc(c,err2);
-                }
-                else 
-                {
-                    if(c==' ')
-                    {
-                        fputc(' ',err2);
-                    }
-                }
-            }
-
-            if(c>='d' && c<='z')
-            {
-                c-=3;
-                fputc(c,err2);
-            }
-            else
-            {
-                if(c>='a' && c<='c')
-                {
-                     c+=25;
-                     fputc(c,err2);
-                }
-                else 
-                {
-                    if(c==' ')
-                    {
-                        fputc(' ',err2);
-                    }
-                }
-            }            
-        }
-        fclose(err1);
-        fclose(err2);
-    }
-    else
-    {
-        printf("file non aperto\n");
-    }
+	FILE * puntcesareCrypt = fopen(cesareCrypt,"r");//apertura file in lettura
+	FILE * puntcesareDecrypt = fopen(cesareDecrypt,"w");//apertura file in scrittura
+	
+	char c;
+	
+	while(!feof(puntcesareCrypt))
+	{
+		c=getc(puntcesareCrypt);
+		if(c != '\n');
+		c=c-k;
+		
+		putc(c,puntcesareDecrypt);
+	}
+	
+	fclose(puntcesareCrypt);
+	fclose(puntcesareDecrypt);
 }
