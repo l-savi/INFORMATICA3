@@ -25,8 +25,8 @@ void contaparidispari(char fin[], char fout1[], char fout2[]);
 composto da una sequenza di numeri di una cifra separati da uno spazio bianco e successivamente scrive 2 file,
  pari.txt e dispari.txt, nei quali dovrai inserire i numeri che hai letto a seconda del loro valore pari o dispari
 */
-void cesareCrypt(char fin[],char fout[]);
-void cesareDecrypt(char fin[],char fout[]);
+void cesareCrypt(char fin[],char fout[], int );
+void cesareDecrypt(char fin[],char fout[], int );
 /*Scrivere le funzioni cesareCrypt e cesareDecrypt che criptano o decriptano un file in input di una chiave key,
  usando l’algoritmo di Cesare. Commentare adeguatamente il codice scritto.*/
 
