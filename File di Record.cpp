@@ -95,7 +95,6 @@ void stampa(char file[])
         for(int j = 0; j<V; j++){
             printf("%d\t", t.voti[j]);
         }
-        printf("\n\n");
     }
     
 }
