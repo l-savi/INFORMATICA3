@@ -10,9 +10,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 20
-#define V 10
-#define T 5
+#define N 1
+#define V 5
+#define T 1
 
 struct data {
     int gg;
@@ -21,7 +21,6 @@ struct data {
 } typedef data;
 
 struct alunno {
-    int matricola;
     char cognome[N];
     char nome[N];
     data nascita;
@@ -31,9 +30,6 @@ struct alunno {
 void carica(char[]);
 
 void stampa(char[]);
-
-
-
 
 
 int main()
@@ -49,31 +45,30 @@ int main()
 void carica(char file[])
 {
 
-    alunno t;
-    FILE * fp = fopen(file, "ab");
+    alunno s1;
+    FILE * err1 = fopen(file, "ab");
 
-    for(int i = 0; i<T; i++)
-    { 
-        t.matricola = i+1;
+    for(int i=0; i<T; i++)
+    {
 
         printf("inserisci cognome: ");
-        scanf("%s", t.cognome);
+        scanf("%s", s1.cognome);
 
         printf("inserisci nome: ");
-        scanf("%s", t.nome);
+        scanf("%s", s1.nome);
 
-        t.nascita.gg = rand()%30+1;
-        t.nascita.mm = rand()%12+1;
-        t.nascita.aa = rand()%30+1990;
+        s1.nascita.gg = rand()%30+1;
+        s1.nascita.mm = rand()%12+1;
+        s1.nascita.aa = rand()%30+1990;
 
-        for(int j = 0; j<V; j++) {
+        for(int j=0; j<V; j++) {
             
-            t.voti[j] = rand()%10+1;
+            s1.voti[j] = rand()%10+1;
         }
 
-        fwrite(&t, sizeof(alunno), 1, fp);
+        fwrite(&s1, sizeof(alunno), 1, err1);
     }
-    fclose(fp);
+    fclose(err1);
 }
 
 
@@ -81,19 +76,18 @@ void carica(char file[])
 
 void stampa(char file[])
 {
-    FILE * fp = fopen(file, "rb");
-    alunno t;
-    for(int i = 0; i<T; i++)
+    FILE * err1 = fopen(file, "rb");
+    alunno s1;
+    for(int i=0; i<T; i++)
     {
-        fread(&t, sizeof(alunno), 1, fp);
-
-        printf("numero matricola: %d\n", t.matricola);
-        printf("cognome: %s\n", t.cognome);
-        printf("nome: %s\n", t.nome);
-        printf("giorno di nascita: %d/%d/%d\n", t.nascita.gg, t.nascita.mm, t.nascita.aa);
+        fread(&s1, sizeof(alunno), 1, err1);
+        
+        printf("cognome: %s\n", s1.cognome);
+        printf("nome: %s\n", s1.nome);
+        printf("giorno di nascita: %d/%d/%d\n", s1.nascita.gg, s1.nascita.mm, s1.nascita.aa);
         printf("voti-\n");
         for(int j = 0; j<V; j++){
-            printf("%d\t", t.voti[j]);
+            printf("%d\t", s1.voti[j]);
         }
     }
     
