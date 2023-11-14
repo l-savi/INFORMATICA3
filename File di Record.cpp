@@ -11,8 +11,8 @@
 #include <time.h>
 
 #define N 10
-#define V 5
-#define T 5
+#define V 10
+#define T 10
 
 struct data {
     int gg;
