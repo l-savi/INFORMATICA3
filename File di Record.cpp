@@ -10,9 +10,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 1
+#define N 10
 #define V 5
-#define T 1
+#define T 5
 
 struct data {
     int gg;
@@ -21,6 +21,7 @@ struct data {
 } typedef data;
 
 struct alunno {
+    int matricola;
     char cognome[N];
     char nome[N];
     data nascita;
@@ -31,64 +32,99 @@ void carica(char[]);
 
 void stampa(char[]);
 
+int conta(char[], char[]);
+
+
 
 int main()
 {
+    int r;
+
     srand(time(NULL));
 
     carica("alunni.dat");
 
     stampa("alunni.dat");
+
+    r = conta("alunni.dat", "savino");
+    printf("\nsavino: %d\n", r);
     
 }
 
 void carica(char file[])
 {
 
-    alunno s1;
+    alunno t;
     FILE * err1 = fopen(file, "ab");
 
-    for(int i=0; i<T; i++)
-    {
+    if(err1!=NULL){
+        for(int i=0; i<T; i++)
+        {    
+            t.matricola = i+1;
 
-        printf("inserisci cognome: ");
-        scanf("%s", s1.cognome);
+            printf("inserisci cognome: ");
+            scanf("%s", t.cognome);
 
-        printf("inserisci nome: ");
-        scanf("%s", s1.nome);
+            printf("inserisci nome: ");
+            scanf("%s", t.nome);
 
-        s1.nascita.gg = rand()%30+1;
-        s1.nascita.mm = rand()%12+1;
-        s1.nascita.aa = rand()%30+1990;
+            t.nascita.gg = rand()%30+1;
+            t.nascita.mm = rand()%12+1;
+            t.nascita.aa = rand()%30+1990;
 
-        for(int j=0; j<V; j++) {
-            
-            s1.voti[j] = rand()%10+1;
+            for(int j = 0; j<V; j++) {
+                
+                t.voti[j] = rand()%10+1;
+            }
+
+            fwrite(&t, sizeof(alunno), 1, err1);
         }
-
-        fwrite(&s1, sizeof(alunno), 1, err1);
+        
     }
     fclose(err1);
 }
 
 
-
-
 void stampa(char file[])
 {
     FILE * err1 = fopen(file, "rb");
-    alunno s1;
-    for(int i=0; i<T; i++)
-    {
-        fread(&s1, sizeof(alunno), 1, err1);
-        
-        printf("cognome: %s\n", s1.cognome);
-        printf("nome: %s\n", s1.nome);
-        printf("giorno di nascita: %d/%d/%d\n", s1.nascita.gg, s1.nascita.mm, s1.nascita.aa);
-        printf("voti-\n");
-        for(int j = 0; j<V; j++){
-            printf("%d\t", s1.voti[j]);
+    alunno t;
+    if(err1!=NULL){
+        while(!feof(err1))
+        {
+            fread(&t, sizeof(alunno), 1, err1);
+
+            printf("numero matricola: %d\n", t.matricola);
+            printf("cognome: %s\n", t.cognome);
+            printf("nome: %s\n", t.nome);
+            printf("giorno di nascita: %d/%d/%d\n", t.nascita.gg, t.nascita.mm, t.nascita.aa);
+            printf("-voti-\n");
+            for(int j = 0; j<V; j++){
+                printf("%d\t", t.voti[j]);
+            }
+            printf("\n\n");
         }
     }
-    
+    fclose(err1);
 }
+
+int conta(char file[], char z[])
+{
+    FILE * err1 = fopen(file, "rb");
+
+    alunno t;
+    int c = 0;
+
+    if(err1 != NULL){
+        while(!feof(err1))
+        {
+            fread(&t, sizeof(alunno), 1, err1);
+
+            if(strcmp(t.cognome, z) == 0) c++;
+        }
+    }
+    fclose(err1);
+
+    return c;
+}
+
