@@ -1,10 +1,3 @@
-/** ****************************************************************************************
-* 
-* @author Leonardo Savino
-* @date 12/11/2023
-*
-*/
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -60,8 +53,6 @@ int main()
     r = trova("alunni.dat", "savino");
     printf("\nposizione savino: %d\n", r);
 
-    r = contaRecord("alunni.dat");
-    printf("\ndimensione file: %d record\n", r);
     
 }
 
@@ -142,3 +133,62 @@ int conta(char file[], char z[])
     return c;
 }
 
+
+void stampaAlt(char file[])
+{
+    FILE * err1 = fopen(file, "rb");
+    alunno t;
+    int m = 0, max = 0, min = 10;
+
+    if(err1!=NULL){
+        while(!feof(err1))
+        {
+            fread(&t, sizeof(alunno), 1, err1);
+            
+            printf("cognome: %s\n", t.cognome);
+            for(int j = 0; j<V; j++)
+            {
+                m+=t.voti[j];
+
+                if(max < t.voti[j]) max = t.voti[j];
+
+                if(min > t.voti[j]) min = t.voti[j];
+            }
+
+            m/=V;
+
+            printf("media dei voti: %d\n", m);
+            printf("massimo dei voti: %d\n", max);
+            printf("minimo dei voti: %d\n", min);
+
+            printf("\n\n");
+
+            m = 0;
+            max = 0;
+            min = 10;
+        }
+    }
+    fclose(err1);
+}
+
+int trova(char file[], char nome[])
+{
+    FILE * err1 = fopen(file, "rb");
+
+    alunno buffer;
+    int c=-1;
+
+    if(err1!=NULL)
+        while(!feof(err1))
+        {
+            fread(&buffer, sizeof(alunno), 1, err1);
+
+            if(strcmp(buffer.cognome, nome)==0) 
+            {
+                c = ftell(err1) / sizeof(alunno);
+            }
+        }
+
+    return c;
+    fclose(err1);
+}
