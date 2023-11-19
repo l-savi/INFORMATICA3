@@ -34,6 +34,12 @@ void stampa(char[]);
 
 int conta(char[], char[]);
 
+void stampaAlt(char[]);
+
+int trova(char[], char[]);
+
+int contaRecord(char[]);
+
 
 
 int main()
@@ -48,6 +54,14 @@ int main()
 
     r = conta("alunni.dat", "savino");
     printf("\nsavino: %d\n", r);
+
+    stampaAlt("alunni.dat");
+
+    r = trova("alunni.dat", "savino");
+    printf("\nposizione savino: %d\n", r);
+
+    r = contaRecord("alunni.dat");
+    printf("\ndimensione file: %d record\n", r);
     
 }
 
