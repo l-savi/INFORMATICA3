@@ -9,9 +9,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define N 10
+#define N 5
 #define V 10
-#define T 10
+#define T 5
 
 struct data {
     int gg;
@@ -39,6 +39,15 @@ int trova(char[], char[]);
 
 int contaRecord(char[]);
 
+int trovaPrimo(char[], char[]);
+
+int trovaUltimo(char[], char[]);
+
+int contaRecord(char[]);
+
+int modifica  (char[], char[], char[]);
+
+void modificaRecordN(char[], int);
 
 
 int main()
@@ -58,7 +67,23 @@ int main()
 
     r = trova("alunni.dat", "savino");
     printf("\nposizione savino: %d\n", r);
+    
+        r = trovaPrimo("alunni.dat", "savino");
+    printf("\nprima posizione savino: %d\n", r);
 
+    r = trovaUltimo("alunni.dat", "savino");
+    printf("\nultima posizione savino: %d\n", r);
+
+    r = contaRecord("alunni.dat");
+    printf("\ndimensione file: %d record\n", r);
+
+
+    r = modifica("alunni.dat", "savino", "savi");
+    printf("\ncognomi cambiati: %d record\n", r);
+
+    modificaRecordN("alunni.dat", 3);
+
+    stampaAlt("alunni.dat");
     
 }
 
@@ -196,5 +221,117 @@ int trova(char file[], char nome[])
         }
 
     return c;
+    fclose(err1);
+}
+
+
+int trovaPrimo(char file[], char nome[])
+{
+    FILE * err1 = fopen(file, "rb");
+
+    alunno buffer;
+    int c=-1;
+
+    if(err1!=NULL)
+        while(!feof(err1))
+        {
+            fread(&buffer, sizeof(alunno), 1, err1);
+
+            if(strcmp(buffer.cognome, nome)==0) 
+            {
+                c = ftell(err1) / sizeof(alunno);
+            }
+        }
+
+    return c;
+    fclose(err1);
+}
+
+int trovaUltimo(char file[], char nome[])
+{
+    FILE * err1 = fopen(file, "rb");
+
+    alunno buffer;
+    int c=-1;
+
+    if(err1!=NULL)
+        while(!feof(err1))
+        {
+            fread(&buffer, sizeof(alunno), 1, err1);
+
+            if(strcmp(buffer.cognome, nome)==0) 
+            {
+                c = ftell(err1) / sizeof(alunno);
+            }
+        }
+
+    return c;
+    fclose(err1);
+}
+
+int contaRecord(char file[])
+{
+    FILE *err1 = fopen(file, "rb");
+
+    int d = -1;
+
+    if(err1!=NULL)
+    {
+        fseek(err1, 0, SEEK_END);
+        d=ftell(err1);
+    }
+
+    return d/sizeof(alunno);
+
+}
+
+
+int modifica(char file[], char c1[], char c2[])
+{
+    FILE * err1 = fopen(file, "rb+");
+    alunno buffer;
+    int c = 0;
+
+    if(err1!=NULL){
+        while(!feof(err1))
+        {
+            fread(&buffer, sizeof(alunno), 1, err1);
+            if(strcmp(buffer.cognome, c1)==0)
+            {
+                strcpy(buffer.cognome, c2);
+                fseek(err1, -sizeof(alunno), SEEK_CUR);
+                fwrite(&buffer, sizeof(alunno), 1, err1);
+                c++;
+            }
+        }
+    }
+    fclose(err1);
+    return c;
+}
+
+void modificaRecordN(char file[], int n)
+{
+    FILE * err1 = fopen(file, "rb+");
+    alunno buffer;
+
+    if(err1!=NULL){      
+            
+        printf("inserisci cognome: ");
+        scanf("%s", buffer.cognome);
+
+        buffer.nascita.gg = rand()%30+1;
+        buffer.nascita.mm = rand()%12+1;
+        buffer.nascita.aa = rand()%30+1990;
+
+        for(int j = 0; j<V; j++) {
+                    
+            buffer.voti[j] = rand()%10+1;
+        }
+
+        fseek(err1, sizeof(alunno) * (n-1), SEEK_SET);  
+        fwrite(&buffer, sizeof(alunno), 1, err1);
+            
+        
+    }
     fclose(err1);
 }
