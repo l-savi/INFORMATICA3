@@ -1,0 +1,26 @@
+#ifdef RETTANGOLO_H
+#define RETTANGOLO_H
+
+class Rettangolo{
+	private:
+		double base;
+		double altezza;
+	public:
+		Rettangolo()
+		Rettangolo(double);
+		Rettangolo(double, double);
+		void setBase();
+		void setAltezza();
+		double getbase();
+		double getAltezza();
+		double calcolaPerimetro();
+		double calcolaArea();
+		double calcoladiagonale();
+		void stampa();
+		void setTutto(double base=1,double altezza=1){
+			this->base=base;
+			his->altezza=altezza;
+		}
+		
+};
+#endif
