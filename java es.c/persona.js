@@ -6,5 +6,5 @@ persona.eta = prompt("Inserisci l'eta")
 
 console.log("Nome = " + persona.nome);
 console.log("Cognome = " + persona.cognome);
-console.log("Età = " + persona.età);
+console.log("Eta'= " + persona.età);
 
