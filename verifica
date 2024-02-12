@@ -1,0 +1,29 @@
+#ifdef
+#define N10
+#define V8
+
+class Studente 
+{
+	private:
+		int matricola;
+		char cognome [N];
+		int voti [V];
+	public: 
+		Studente(int matricola=0, std::string cognome='' int voti=0);
+		{
+			this->matricola=matrcola;
+			this->
+			this->voti
+		}
+		~Studente()
+		int getmatricola();
+		string getcognome();
+		void setmatricola (int matricola);
+		void setcognome(string cognome);
+		void setvoti (int voti=6){
+			
+		}
+		int votoMaggiore();
+		int mediaVoti();
+		
+} #endif
