@@ -1,10 +1,10 @@
-const pass = document.getElementById("pass");
+const password = document.getElementById("password");
 
-pass.addEventListener("change", () => {
-    if(pass.value.length < 8){
-        pass.style.backgroundColor = "red";
+password.addEventListener("change", function(){
+    if(password.value.length < 8){
+        password.style.backgroundColor = "red";         //sfondo diventa rosso
     }    
     else{
-        pass.style.backgroundColor = "green";
+        password.style.backgroundColor = "green";
     }
 });

@@ -1,5 +1,5 @@
-const text = document.getElementById("mytext");
+const text = document.getElementById("text");
 
-text.addEventListener("click", () => {
+text.addEventListener("click",function(){     
     text.hidden = true;    
 });
