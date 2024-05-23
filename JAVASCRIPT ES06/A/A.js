@@ -6,5 +6,5 @@ Button.addEventListener('mouseover', function(){                   //evento al b
 });
 
 Button.addEventListener('mouseout', function(){                     //evento al bottone con mouse non sul bottone 
-    Button.style.backgroundColor = "white";                            //prendiamo stile bottone colore sfondo 
+    Button.style.backgroundColor = "white";                          //prendiamo stile bottone colore sfondo 
 });
