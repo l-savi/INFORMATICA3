@@ -1,1 +1,14 @@
-
+//file per creare la pagina di Google/Internet
+<!DOCTYPE html>   
+<html lang="en">                                                                      //lingua pagina
+    <head>        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="A.js" defer></script>                                          //apre file dello script dove c'è il nostro codice
+        <link rel="stylesheet" href="A.css">                                        //apre foglio di stile
+        <title>bottone cambia colore</title>   
+    </head>
+    <body>
+        <button id="Button">Passami sopra</button>                                //crea un bottone nella pagina, l'id identifica l'oggetto che ho chiamato Button
+    </body>
+</html>
