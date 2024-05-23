@@ -1,9 +1,9 @@
 const text = document.getElementById("Input");
 
-text.addEventListener("focus", function(){          //clicco dentro
+text.addEventListener("focus", function(){  
     text.style.backgroundColor = "lightgreen";
 });
 
-text.addEventListener("blur", function(){       //clicco fuori
+text.addEventListener("blur", function(){ 
       text.style.backgroundColor = "white";
 });
