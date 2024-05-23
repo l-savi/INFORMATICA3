@@ -13,7 +13,7 @@
 
 /**
  * @brief Stampa a schermo tanti numeri della sequenza di fibonacci
- *        quanto Ë il parametro x
+ *        quanto √® il parametro x
  *
  * @param x base
  * @return void
@@ -24,7 +24,7 @@ void fibonacciTest(void);
 /**
  * @brief Scrivere la funzione int pari_dispari(in numero), attraverso 
  *        sottrazioni successive determinare se il numero passato alla 
-*         funzione Ë pari o dispari, restituire 0 se il numero Ë pari, 1 se dispari.
+*         funzione √® pari o dispari, restituire 0 se il numero √® pari, 1 se dispari.
  *
  * @param x base
  * @return 1 se dispari, 0 se pari
@@ -34,7 +34,7 @@ void pariDispariTest(void);
 
 /**
  * @brief Scrivere una funzione che prende in input un numero 
- *        intero e determina se Ë un numero amico.
+ *        intero e determina se √® un numero amico.
  *
  * @param x base
  * @return void
@@ -119,7 +119,7 @@ void fibonacci(int x)
 
     printf("%d\t%d\t", a,b);      //stampo i primi due numeri della sequenza
 
-    for(int i = 0; i<x-2; i++)    //ciclo fino a x-2 perchË i primi due numeri li ho gi‡ stampati
+    for(int i = 0; i<x-2; i++)    //ciclo fino a x-2 perch√® i primi due numeri li ho gi√† stampati
     {
         if(a>b)
         {
@@ -166,13 +166,13 @@ void pariDispariTest(void)
 
 int numAmici(int x)
 {
-    int y, r;       //y = conterr‡ la somma dei divisori di x, r = conterr‡ la somma dei divisori di y
+    int y, r;       //y = conterr√† la somma dei divisori di x, r = conterr√† la somma dei divisori di y
 
     //calcolo la somma dei divisori di x escluso x
     y = sommaDivisori(x)-x;
     ////calcolo la somma dei divisori di y escluso y
     r = sommaDivisori(y)-y;
-    //controllo se Ë un numero amico e restituisco vero (1) o falso (0)
+    //controllo se √® un numero amico e restituisco vero (1) o falso (0)
     if (x==r) return y;
     else return 0;
 }
@@ -197,7 +197,7 @@ int sommaDivisori(int x)
     for(int i = 1; i<=x; i++)
     {
         if(x%i==0) 
-            r += i;            //se l'indice del ciclo Ë un divisore, sommo  
+            r += i;            //se l'indice del ciclo √® un divisore, sommo  
     }
 
     return r;
