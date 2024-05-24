@@ -4,10 +4,9 @@
 class Coda {
     
     private:
-        unsigned int nElementi;
-        unsigned int fine;
-        unsigned int inizio;
-        unsigned int size;
+     int fine;
+        int inizio;
+        int size;
         int *vet;
     
     public:
