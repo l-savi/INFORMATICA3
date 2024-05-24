@@ -1,10 +1,10 @@
 const Bottone = document.getElementById("Bottone1");
 const Bottone2 = document.getElementById("Bottone2");
 
-bottone1.style.backgroundColor = "lightgreen";
-bottone1.style.border ="green";
-bottone1.style.color = "red";
+Bottone1.style.backgroundColor = "lightgreen";
+Bottone1.style.border ="green";
+Bottone1.style.color = "red";
 
-bottone2.style.backgroundColor = "lightblue";
-bottone2.style.border ="yellow";
-bottone2.style.color = "pink";
+Bottone2.style.backgroundColor = "lightblue";
+Bottone2.style.border ="yellow";
+Bottone2.style.color = "pink";
