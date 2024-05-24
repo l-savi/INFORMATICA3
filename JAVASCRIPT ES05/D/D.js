@@ -1,5 +1,5 @@
-const text = document.getElementById("Input");
+const text = document.getElementById("Input");       
 
-text.addEventListener("Input", function() {
-    text.value = text.value.toUpperCase()
+text.addEventListener("input", function(){  
+    text.value = text.value.toUpperCase()     
 });
