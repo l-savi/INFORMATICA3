@@ -15,6 +15,4 @@ int main() {
     int x = c.top();
     cout<<"primo elemento: "<<x<<endl;
 
-    c.stampa();
-
 }
