@@ -6,5 +6,5 @@ Bottone1.style.border ="green";
 Bottone1.style.color = "red";
 
 Bottone2.style.backgroundColor = "lightblue";
-Bottone2.style.border ="yellow";
+Bottone2.style.border ="blue";
 Bottone2.style.color = "pink";
