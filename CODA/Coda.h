@@ -23,7 +23,6 @@ class Coda {
         bool push(int);
         bool pop();
         int top();
-        void stampa();
 };
 
 #endif
